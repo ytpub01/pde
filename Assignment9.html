@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<META NAME="GENERATOR" Content="Visual Page 2.0 for Windows">
+	<META NAME="Author" Content="anderson">
+	<TITLE>Assignment 9: Math 269B Winter 2006</TITLE>
+</HEAD>
+
+<BODY>
+<SCRIPT> jsMath = {Controls: {cookie: {scale: 100}}} </SCRIPT>
+<SCRIPT SRC="../../jsMath/jsMath.js"></SCRIPT>
+<SCRIPT> jsMath.Setup.Script("plugins/tex2math.js") </SCRIPT>
+<NOSCRIPT>
+<DIV STYLE="color:#CC0000; text-align:center">
+<B>Warning: <A HREF="http://www.math.union.edu/locate/jsMath">jsMath</A>
+requires JavaScript to process the mathematics on this page.<BR>
+If your browser supports JavaScript, be sure it is enabled.</B>   
+</DIV>
+</NOSCRIPT>
+<SCRIPT> jsMath.Macro('\dfrac','{{\\displaystyle {#1 \\over #2}}}',2) </SCRIPT>
+<H1>Math 269B: Assignment 9</H1>
+<P><I>Assigned Wednesday, March 7, 2007, due Wednesday March 14, 2007</I><BR>
+<B>The final exam is on Thursday, March 22, 2007 11:30 AM - 1:30 PM</B>
+<H2>
+<HR ALIGN="CENTER">
+Theory Work</H2>
+<P><B>[1]</B> Exercise 7.3.1 on page 182 of Strikwerda. <BR>
+<BR>
+<BR>
+<B>[2] (a)</B> Use Von Neumann stability analysis to show that the Peaceman-Rachford scheme, (7.3.8a) and (7.3.8b)
+on page 175 of Strikwerda, is unconditionally stable.<BR>
+<BR>
+<B>(b)</B> Are the substeps (7.3.8a) and (7.3.8b) individually unconditionally stable? <BR>
+<BR>
+<BR>
+<B>[3]</B> Consider the two-dimensional convection equation,$v_t+ {\rm a}\; v_x +{\rm b} \; v_y = 0 $<B>,</B> a and b &gt; 0, for $(x,\;y) \in [0,1] \times [0,1]$,
+$t \in [0,{\rm T} ] $ and $v$ periodic. <BR>
+<BR>
+<B>(a)</B> Give a scheme for which you can prove conditional stability in the infinity norm, $||\;\;||_{\infty}$.<BR>
+<BR>
+<B>(b)</B> What is the condition required for stability ?<BR>
+<BR>
+<B>(c)</B> If the coefficients of the equations are variable, e.g. a and b are functions of (x,y), give a scheme
+for which you can prove conditional stability in the infinity norm, $||\;\;||_{\infty}$.<BR>
+<BR>
+<B>(d)</B> What is the condition required for stability in the variable coefficient case?
+<H2><FONT SIZE="5">Computational Problems</FONT></H2>
+<P><B>[1] (a)</B> Modify your program from Assignment 8 so that it implements the Peaceman-Rachford ADI method
+(equations (7.3.8a) and (7.3.8b) on page 175 of Strikwerda) to compute approximate solutions to the equation $v_t = \dfrac{1}{50} ( v_{xx} + v_{yy} )$, for $(x,\;y) \in [0,1] \times [0,1]$,
+$t \in [0,{\rm T} ]$ with initial condition $v(x,y,0) = \sin(\pi x) \sin(2 \pi y)$, and homogeneous boundary conditions for $v$.
+<P><BR>
+  <B>(b)</B> Design and carry out numerical experiments that demonstrate the second order accuracy of the numerical
+  results. Turn in a brief description of your experiments and the data you collected to verify second order accuracy. <BR>
+  <BR>
+  <B>(c)</B> Turn in a listing of that part of your code that advances the solution from time n$k$ to (n+1)$k$ and any
+  required supporting routines.
+  <SCRIPT> jsMath.ConvertTeX() </SCRIPT>
+  <SCRIPT> jsMath.Process() </SCRIPT>
+</BODY>
+
+</HTML>

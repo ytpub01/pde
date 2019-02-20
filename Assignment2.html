@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--last modified on Wednesday, January 25, 2006 06:38 PM -->
+<HTML>
+
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<META NAME="GENERATOR" Content="Visual Page 2.0 for Windows">
+	<META NAME="Author" Content="anderson">
+	<TITLE>Assignment 2 : Math 269B Winter 2007</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>Math 269B: Assignment 2</H1>
+<P><I>Assigned Wednesday, Jan. 17, 2007, due Wednesday Jan. 24, 2007</I></P>
+<P><A HREF="#What"><I>What You Should Turn In</I></A></P>
+<P>
+<H2>
+<HR ALIGN="CENTER">
+Theory Work</H2>
+<P><B>[1]</B> Derive the leading term of the local truncation error for each of the following finite difference
+schemes used to create approximate solutions of the equation <I>v</I><SUB>t</SUB> + a <I>v</I><SUB>x</SUB> = 0<B>.<BR>
+</B><IMG SRC="Schemes.gif" WIDTH="367" HEIGHT="227" ALIGN="BOTTOM" BORDER="0"></P>
+<P><B>[2] </B>Give a derivation, based on the Lax-Wendroff idea, of a finite difference method to create approximate
+solutions of the differential equation <I>v</I><SUB>t</SUB> + a(x) <I>v</I><SUB>x</SUB> = 0<BR>
+<BR>
+<B>[3] </B>What is the leading term of the local truncation error for the scheme you derived in [2]?
+<H2>
+<HR ALIGN="CENTER">
+<FONT SIZE="5">Computational Problems</FONT></H2>
+<P><B>[1] </B>Modify the program from assignment 1 to create a program (or programs) that implement the finite
+difference schemes (1a), (1b) and (1c) in theory problem 1 to create approximate solutions to the PDE <I>v</I><SUB>t</SUB>
++ a <I>v</I><SUB>x</SUB> = 0 for 0 <FONT FACE="Symbol">&pound; </FONT>x <FONT FACE="Symbol">&pound; 1</FONT> with
+initial condition <BR>
+<BR>
+<IMG SRC="InitialConditions.gif" WIDTH="316" HEIGHT="133" ALIGN="BOTTOM" BORDER="0"><BR>
+<BR>
+and v(t,x) periodic in x with period 1. Have this program (or programs) compute the error in the solution at a
+final time T using the discrete L<SUP>2</SUP> norm<BR>
+<BR>
+<IMG SRC="TwoNorm.gif" WIDTH="241" HEIGHT="86" ALIGN="BOTTOM" BORDER="0"><BR>
+Where M is the number of mesh panels in the spatial domain [0,1]. Note: The sum is from 0 to M-1, not 0 to M. </P>
+<P>For those of you just becoming familiar with C++, there is some<a href="../CPPdocs/index.html" target="_parent"> introductory C++ documentation</a> available. <BR>
+  <BR>
+  <B>[2]</B> <B>(a)</B> Let the convection speed a = 1.0. Use each scheme, (1a), (1b) and (1c), to compute the solution
+  to T = 1.0 (one revolution) using a mesh spacing h of size 1/20, 1/40 and 1/80, and a timestep k chosen so that
+  the ratio <FONT FACE="Symbol">l </FONT>= k/h is kept at a fixed value = 3/4. Report the error in the computed solution
+  at T = 1.0 (in the discrete L<SUP>2</SUP> norm). Also, for the finest mesh spacing (h = 1/80)  create and turn
+  in a plot of the numerical solution at T = 1.0. <BR>
+  <BR>
+  <B>(b)</B> Which scheme produces the best results?<BR>
+  <BR>
+  <B>[3]</B> <B>(a)</B> Let the convection speed a = 1.0. Use each scheme, (1a), (1b) and (1c), to compute the solution
+  to T = 1.0 (one revolution) using a mesh spacing h of size 1/20, 1/40 and 1/80, and a timestep k chosen so that
+  the ratio k/h<SUP>2</SUP> is kept at a fixed value =1/2. Report the error in the computed solution at T = 1.0 (in
+  the discrete L<SUP>2</SUP> norm).<BR>
+  Also, for the finest mesh spacing (h = 1/80) create and turn in a plot of the numerical solution at T = 1.0. <BR>
+  <BR>
+  <B>(b)</B> Which scheme produces the best results?<BR>
+  <BR>
+  <BR>
+  <B>[4]</B> <B>(a)</B> What happens to the numerical solution when you use the scheme in 1(a), but set the convection
+  speed a = -1.0? Suggest a modification of the difference scheme that would produce better results. <BR>
+  <B>(b) </B>What happens to the numerical solution when you use the scheme in 1(b), but set the convection speed
+  a = -1.0? Suggest a modification of the difference scheme that would produce better results.</P>
+<H2>
+<HR ALIGN="CENTER">
+<A NAME="What"></A>What You Should Turn In</H2>
+
+<UL>
+	<LI>Answers to the theoretical problems.
+	<LI>For 2[a] and 3[a], the values for the error at T = 1.0 and plots of the solution profiles at T = 1.0.
+	<LI>Your answers to 2[b], 3[b] and 4[a][b].
+</UL>
+
+<P>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--last modified on Friday, January 13, 2006 04:42 PM -->
+<HTML>
+
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<META NAME="GENERATOR" Content="Visual Page 2.0 for Windows">
+	<META NAME="Author" Content="anderson">
+	<TITLE>Assignment 1 : Math 269B Winter 2007</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>Math 269B: Assignment 1</H1>
+<P><I>Assigned Wednesday, Jan. 10, 2007, due Wednesday Jan. 17, 2007</I></P>
+<H2>
+<HR ALIGN="CENTER">
+Theory Work</H2>
+<P><B>[1]</B> Problem 1.1.1 on page 7 of Strikwerda.<B><BR>
+<BR>
+[2]</B> Give the solution to the initial value problem<BR>
+<BR>
+<IMG SRC="Problem1.gif" WIDTH="470" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"></P>
+
+<P><B>[3] </B>Give the solution to the initial boundary value problem<BR>
+<BR>
+<IMG SRC="Problem2.gif" WIDTH="455" HEIGHT="49" ALIGN="BOTTOM" BORDER="0"></P>
+<P><B>[4]</B> Problem 1.1.6 on page 8 of Strikwerda.</P>
+<H2>
+<HR ALIGN="CENTER">
+<FONT SIZE="5">Computational Problem</FONT></H2>
+<P>When developing computational methods for time-dependent PDE's it is very useful to be able to view plots of
+the solutions at different times. The purpose of the computational part of the first assignment is to have you
+run a sample code and either view plots of the solution as it is computed (for those who decide to use the CAMgraphics
+classes) or view plots created from data files after it has run. If you are using Visual C++, documentation to
+help you set up a Win32 Console Projects to run the assignments is available from the <A HREF="http://www.math.ucla.edu/~anderson/UsingVCPP7/index.html">UsingVCPP7</A>
+web page. <BR>
+<BR>
+<B>For those who <I>are not</I> using the CAMgraphics classes </B><BR>
+<BR>
+[1] Download the sample &quot;main&quot; routine <A HREF="Assign1.cpp">Assign1.cpp</A> and the required support
+files <A HREF="ExactPeriodicSolution.h">ExactPeriodicSolution.h</A>, <A HREF="../CPPcodes/DoubleArray1D.h">DoubleArray1D.h
+</A>, and <A HREF="../CPPcodes/ProfileOutput.h">OutputProfile.h</A>. Compile and run the code. Create plots of
+the output files, and turn in a plot of the solution corresponding to time t = 2.25.<BR>
+<BR>
+<B>For those who <I>are</I> using the CAMgraphics classes <BR>
+</B><BR>
+[0] Download and unzip the CAMgraphics support files contained in <A HREF="../CPPcodes/CAMgraphics.zip">CAMgraphics.zip</A>.
+CAMgraphics.zip contains a subdirectory <B>camgraph</B> that<BR>
+contains all of the required support files and a .lib file containing compiled executable. <BR>
+<BR>
+[1] Create a Win32 Console Project (not a Console Application) with the settings described below. Download and
+insert into this project the sample &quot;main&quot; routine <A HREF="Assign1g.cpp">Assign1g.cpp</A> and the required
+support files <A HREF="ExactPeriodicSolution.h">ExactPeriodicSolution.h</A>, <A HREF="../CPPcodes/DoubleArray1D.h">DoubleArray1D.h
+</A>. Compile and run the program. As the program runs it will stop at the output times and a dialog will appear
+with a plot of the solution. To continue, hit the continue button. If you want hardcopy, select print or specify
+a file to contain the output. Turn in a plot of the solution corresponding to time t = 2.25.<BR>
+<BR>
+<FONT COLOR="#000099">Required Project Settings and Support Files To Use CAMgraphics:</FONT><B><BR>
+</B><BR>
+A program that uses the CAMgraphics display requires project settings that are different than the default settings. Specifically, you use a Win32 Console Project with the following additional entries and settings
+<UL>
+	<LI>Specify the use of MFC in a DLL (<A HREF="../../UsingVCPP7/SpecifyingMFC/index.html">How To V7</A>)
+	<LI>Specify the use of the<B> debug multi-threaded dll </B>runtime library (<A HREF="../../UsingVCPP7/SpecifyingDebugMTDLL/index.html">How
+	to V7</A>)
+	<LI>Disable the use of pre-compiled headers (PCH's).(<A HREF="../../UsingVCPP7/DisablingPCH/index.html">How To V7</A>)
+	<LI>Add to your include path the location of the subdirectory <B><I>camgraph</I></B> containing the header files
+	for CAMgraphics. (<A HREF="../../UsingVCPP7/SettingIncludePath/index.html">How To V7</A>)
+	<LI>Add the startup file (from from subdirectory camgraph) <B>CAMstartup.cpp </B>to your project.
+	<LI>Add the library file (from from subdirectory camgraph) <B>VC7Graphics.lib</B> to your project. The .lib files
+	will not show up in the file chooser dialog unless you specify file types *.* (arrgh!).
+	<LI>Add the resource (from from subdirectory camgraph) <B>DisplayDialog.rc </B>to your project.
+</UL>
+
+<P>Notes : The graphics display dialog may appear behind other windows, to make it visible, select the MSVC display
+icon from the bottom menu bar.</P>
+<H2>
+<HR ALIGN="CENTER">
+<A NAME="What"></A>What You Should Turn In</H2>
+
+<UL>
+	<LI>Answers to the theoretical problems.
+	<LI>A plot of the solution at t = 2.25 created by the sample program.
+</UL>
+
+<P>
+
+</BODY>
+
+</HTML>

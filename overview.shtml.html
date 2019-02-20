@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Math 269A Fall 2006</title>
+<link href="../nav/globalNav.css" rel="stylesheet" type="text/css" />
+<link href="../nav/infoNav.css" rel="stylesheet" type="text/css" />
+<link href="../nav/mainpage.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../nav/globalNav.js"></script>
+</head>
+
+<body>
+<center>
+<!--                                  -->
+ <!-- Begin Main Nav Bar Specification -->
+ <!--                                  -->
+
+<!--   Course Header  -->
+<style type="text/css">
+<!--
+#mainLogoBar {
+	background-color: #536895;
+}
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+<div id="mainLogoBar">
+  <h1 align="center"><span class="courseHeaderFont style1">Mathematics 269B 
+    </span><br />
+  </h1>
+</div>
+
+<div id="mainNavBar">
+<!-- Home Menu Item --> 
+
+<div 
+id="homeMenuA" 
+class = "menu","menuA"
+onmouseover="MM_showHideLayers('homeMenuA','','hide','homeMenuB','','show')">
+<a href="../index.html">Home</a></div>
+
+<div 
+ id="homeMenuB" 
+ class = "menu","menuB"
+ onmouseover="MM_showHideLayers('homeMenuA','','hide','homeMenuB','','show')" 
+ onmouseout="MM_showHideLayers('homeMenuA','','show','homeMenuB','','hide')">
+    <a href="../index.html">Home</a></div>
+
+<!-- End Home Menu  -->
+
+<!-- Information Menu Item --> 
+
+<div 
+id="infoMenuA" 
+class = "menu","menuA"
+onmouseover="MM_showHideLayers('infoMenuA','','hide','infoMenuB','','show')">
+<a href="../info/overview.shtml">Information</a></div>
+
+<div 
+ id="infoMenuB" 
+ class = "menu","menuB"
+ onmouseover="MM_showHideLayers('infoMenuA','','hide','infoMenuB','','show')" 
+ onmouseout="MM_showHideLayers('infoMenuA','','show','infoMenuB','','hide')">
+<a href="../info/overview.shtml">Information</a>
+<a href="../info/overview.shtml">Course Overview</a> 
+<a href="../info/coursePolicy.shtml">Course Info/Policies</a> 
+<a href="http://www.math.ucla.edu">Math Department</a></div>
+
+<!-- End Information Menu  --> 
+
+<!-- Resources Menu Item --> 
+
+<div 
+id="resourcesMenuA" 
+class = "menu","menuA"
+onmouseover="MM_showHideLayers('resourcesMenuA','','hide','resourcesMenuB','','show')">
+<a href="../index.html">Resources</a></div>
+
+<div 
+ id="resourcesMenuB" 
+ class = "menu","menuB"
+ onmouseover="MM_showHideLayers('resourcesMenuA','','hide','resourcesMenuB','','show')" 
+ onmouseout="MM_showHideLayers('resourcesMenuA','','show','resourcesMenuB','','hide')">
+    <a href="../index.html">Resources</a> 
+    <a href="../../UsingVCPP7/index.html" target="_parent">Using Visual Studio </a>
+	<a href="../Support/AboutGnuplot.html">About Gnuplot</a>
+	<a href="../CPPdocs/index.html" target="_parent">Intro. C++ Doc.</a></div>
+
+<!-- End Resources Menu  --> 
+ 
+<!-- Contact Menu Item --> 
+
+<div 
+id="contactMenuA" 
+class = "menu","menuA"
+onmouseover="MM_showHideLayers('contactMenuA','','hide','contactMenuB','','show')">
+<a href="../contact/officeHours.shtml">Contact</a></div>
+
+<div 
+ id="contactMenuB" 
+ class = "menu","menuB"
+ onmouseover="MM_showHideLayers('contactMenuA','','hide','contactMenuB','','show')" 
+ onmouseout="MM_showHideLayers('contactMenuA','','show','contactMenuB','','hide')">
+    <a href="../contact/officeHours.shtml">Contact</a> 
+    <a href="../contact/officeHours.shtml">Office Hours</a>
+	<a href="../contact/email.shtml">Email</a>  </div>
+<!-- End Contact Menu  --> 
+
+<div id="blankMenuA" class = "blankMenu"><a href="../index.html"><br  /></a>
+</div>
+<!-- End Main Nav Bar Specification -->
+</div>
+</center>
+
+<center>
+<!-- Begin body -->
+  <table width="750" border="0">
+       <tr>
+         <td width="24" height="29">&nbsp;</td>
+         <td width="706" valign="top"><div align="center">
+           <p><strong>Numerical Solution of Partial Differential Equations<br />
+             </strong><strong>Prof. Chris Anderson<br />
+             MWF 11-12 WG YOUNG 4216<br />
+			 (Disc. Tu. 11-12 GEOLOGY 4660)
+		   </strong></p>
+         </div></td>
+         <td width="6">&nbsp;</td>
+       </tr>
+       <tr>
+         <td>&nbsp;</td>
+         <td valign="top"><p align="left"><strong>Course Overview</strong>:</p>
+           <p>Systems of ordinary and/or partial differential equations form the basis for nearly all mathematical models
+             used in the physical, social and engineering sciences. Most of the equations that arise cannot be solved &quot;by
+             hand&quot; and require the use of numerical (computational) methods to obtain solutions. The focus of the Math
+             269 series of courses is on the numerical methods used to create approximate solutions of systems of ordinary and
+             partial differential equations.</p>
+           <p>In 269B, the principle goals consist of identifying, analyzing, and implementing finite difference methods for
+             solving hyperbolic and parabolic partial differential quations. A variety of different methods will be covered
+             as well as general theoretical aspects that, when understood, help with the tasks of method selection and implementation.</p>
+           <p>As a practicing numerical analyst, one often doesn't get to choose the software environment where an PDE solution
+             technique is needed. To help prepare students for situations where Matlab is not the software environment in use,
+             C++ and object oriented software techniques will be used for the computational component of this course. </p>
+           <p align="left"><strong>Requirements:</strong></p>
+           <p align="left">Math 269A. It is recommended that the students have taken at least one undergraduate course in numerical analysis,
+		preferably two (e.g. Math 151AB). The assignments will involve programming so an undergraduate course in programming
+		is recommended. <br />
+               <br />
+               <strong>Textbook: </strong>J. Strikwerda, &quot;Finite Difference Schemes &amp; Partial Differntial Equations&quot;, 2nd Edition, SIAM publications, 2004. <br />
+               <br />
+           </p></td>
+         <td>&nbsp;</td>
+       </tr>
+       <tr>
+         <td>&nbsp;</td>
+         <td valign="top">&nbsp;</td>
+         <td>&nbsp;</td>
+       </tr>
+          <br />
+     </p>
+      </td>
+   </tr>
+ </table>
+</center>
+
+</body>
+</html>
+  

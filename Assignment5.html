@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--last modified on Friday, February 10, 2006 09:33 AM -->
+<HTML>
+
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<META NAME="GENERATOR" Content="Visual Page 2.0 for Windows">
+	<META NAME="Author" Content="anderson">
+	<TITLE>Assignment 5: Math 269B Winter 2007</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>Math 269B: Assignment 5</H1>
+<P><I>Assigned Wednesday, Feb. 7, 2007, due Wednesday Feb. 14, 2007<br>
+</I><BR>
+  <B><I>There will be an in class midterm on </I></B><I><strong>Wednesday Feb. 14, 2007.</strong></I>
+
+<hr>
+<P><B>[1]</B> Explain why Von Neumann stability analysis isn't used for variable coefficient problems. <br>
+<P><strong>[2]</strong> Find an example of a sequence of grid functions f<sup> h</sup> defined on a periodic domain such that ||f<sup> h</sup> ||<sub>2 </sub>tends to 0 as h<font face="Symbol"> &reg;</font>0 but ||f <sup>h</sup> ||<sub><font face="Symbol">&yen; </font></sub>does not tend to 0 as  as h<font face="Symbol"> &reg;</font>0. Here ||*<sup></sup> ||<sub>2</sub> is the discrete L<sup>2</sup> norm. <br>
+</P>
+<P align="left"><strong>[3]</strong> Consider the difference scheme
+<P ALIGN="CENTER"><IMG SRC="ConstCentered.gif" WIDTH="163" HEIGHT="41" ALIGN="BOTTOM" BORDER="0"></P>
+<P ALIGN="left">used to create an approximate solution to the equation <I>v</I><SUB>t</SUB> + a <I>v</I><SUB>x</SUB> = 0<B>,</B> a &gt; 0, for x <FONT FACE="Symbol">e (0</FONT>, <FONT FACE="Symbol">1</FONT>), t <FONT FACE="Symbol">e [0</FONT>,
+  <FONT FACE="Symbol">T</FONT>] and  v periodic in x with period 1. 
+  </P>
+</P>
+<P><B>(a)</B> Give the CFL condition for this scheme.<br>
+  <BR>
+  <B>(b)</B> If a timestep is chosen to satisfy the CFL condition, will the method always be convergent in the limit
+as h <FONT FACE="Symbol">&reg; </FONT>0?<br>
+</P>
+<P><B>[4] (a)</B> What is the CFL condition for the scheme</P>
+<P ALIGN="CENTER"><IMG SRC="VarUpwind.gif" WIDTH="232" HEIGHT="51" ALIGN="BOTTOM" BORDER="0"></P>
+<P>when used to create an approximate solution the equation <I>v</I><SUB>t</SUB> + a(x) <I>v</I><SUB>x</SUB> =
+0<B>, </B>a(x) &gt; 0, for x <FONT FACE="Symbol">e (0</FONT>, <FONT FACE="Symbol">1</FONT>), t <FONT FACE="Symbol">e
+[0</FONT>, <FONT FACE="Symbol">T</FONT>], with  v periodic in x with period 1?<br>
+<B><BR>
+(b)</B> If a timestep is chosen to satisfy the CFL condition, will the method always be convergent in the limit
+as h <FONT FACE="Symbol">&reg; </FONT>0?<BR>
+<BR>
+<B>[5][a] </B>Assume that a non-uniform grid spacing is used to compute the solution to <I>v</I><SUB>t</SUB> + a(x)
+<I>v</I><SUB>x</SUB> = 0, a(x) &gt; 0, for x <FONT FACE="Symbol">e (0</FONT>, <FONT FACE="Symbol">1</FONT>), t
+<FONT FACE="Symbol">e [0</FONT>, <FONT FACE="Symbol">T</FONT>], and v periodic with period 1; specifically
+for a number of grid panels M, the sizes of the panels, h<SUB>m</SUB> = x<SUB>m</SUB> - x<SUB>m-1</SUB> for m =
+1 to M are not all constant. What restriction on the timestep, k, does the CFL condition impose when the method</P>
+<P ALIGN="CENTER"><IMG SRC="VarCoeffAndMeshUpwind.gif" WIDTH="232" HEIGHT="47" ALIGN="BOTTOM" BORDER="0"></P>
+<P>is used to create an approximate solution?
+<P><strong>[5][b]</strong> Determine conditions on k and h that insure the scheme is stable as  k  <font face="Symbol"> &reg;</font>0 and h<font face="Symbol"> &reg;</font>0.<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  <BR>
+  <BR>
+<B>[6] </B>When using the method of lines approach, one has the option of selecting an ODE method that yields a scheme with desirable stability characteristics. Considering the equation <I>v</I><SUB>t</SUB> + <I>v</I><SUB>x</SUB> = 0<B>,</B>  for x <FONT FACE="Symbol">e (0</FONT>, <FONT FACE="Symbol">1</FONT>), t <FONT FACE="Symbol">e [0</FONT>, <FONT FACE="Symbol">T</FONT>] and  v periodic in x with period 1, is it possible to select an ODE method for the semi-discretization 
+<P align="center"><img src="MofLinesBD.gif" alt="" width="219" height="61">
+
+<P>so that the resulting scheme is stable when 
+k/h = <FONT FACE="Symbol">l </FONT>&lt; 1?<BR>
+<H2><FONT SIZE="5">Computational Problems</FONT></H2>
+<P>Both of the computational problems involve the numerical solution of the equation <I>v</I><SUB>t</SUB> + <I>v</I><SUB>x</SUB> = 0 for 0 <FONT FACE="Symbol">&pound; </FONT>t <FONT FACE="Symbol">&pound; 1 </FONT>and 0 <FONT FACE="Symbol">&pound; </FONT>x <FONT FACE="Symbol">&pound; 1</FONT> with the initial condition <BR>
+  <BR>
+  <IMG SRC="../Assign2/InitialConditions.gif" WIDTH="316" HEIGHT="133" ALIGN="BOTTOM" BORDER="0"><BR>
+  <BR>
+and v(t,x) periodic in x with period 1. A class that implements the exact solution is <A HREF="ExactPeriodicSolution.h">ExactPeriodicSolution.h</A>. <BR>
+<BR>
+<B>[1]</B><B>(a</B>) Using your program from Assignment 4, empirically estimate the rate of convergence of the upwind method when the ratio <FONT FACE="Symbol">l </FONT>= k/h is fixed at 3/4. Record and turn in the data you used to obtain this estimate. If your results are &quot;peculiar&quot;
+give an explanation for this peculiarity.
+<P><BR>
+  <B>[2] </B>Using your program from Assignment 4, empirically estimate the rate of convergence of the Lax-Wendroff
+   method when using a ratio <FONT FACE="Symbol">l </FONT>= k/h fixed at 3/4. Record and turn in the data you used
+  to obtain this estimate. 
+ If your results are &quot;peculiar&quot;
+give an explanation for this peculiarity.<br>
+<br>
+<hr>
+<h2><br>
+  Supplemental Reading</h2>
+<p>As part of your education, you should be familiar with the &quot;classic literature&quot;. One component of this literature is the 1927 paper by Courant, Friedrichs and Lewy. A <a href="../Articles/CFLpaper.html">pdf version of a translation of the CFL paper</a> is available. </p>
+</BODY>
+
+</HTML>

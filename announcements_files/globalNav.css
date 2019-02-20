@@ -1,0 +1,155 @@
+/* CSS Document */
+
+
+/* for anchors within the menu lists */
+/*
+gold color = #FFB300
+blue color = #536895;
+*/ 
+.menu a, .menu :visited {
+	display:block;
+	font-size:14px;
+	width:146px;
+	color:#000000;
+	text-decoration:none;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font:Arial;
+	font-weight:normal;
+	border: 1px solid #536895;
+	background-color: #FFB300;
+}
+
+.menu :hover{
+	color:#ffFFFF;
+	background: #536895;
+}
+
+.menuA {
+	width:auto;
+	z-index:100;
+	visibility: visible;
+}
+
+.menuB {
+	width:auto;
+	z-index:80;
+	background: #0000FF;
+	overflow: visible;
+}
+
+
+.blankMenu a, .blankMenu :visited {
+	display:block;
+	font-size:14px;
+	width:146px;
+	color:#000000;
+	text-decoration:none;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font:Arial;
+	font-weight:normal;
+	border: 1px solid #536895;
+	background-color: #FFB300;
+}
+
+
+/* Container for Logo   */
+
+#mainLogoBar
+{
+	width:750px;
+	height:auto;
+	display:block;
+}
+
+/* Container for Pull-down menus */
+ 
+#mainNavBar{
+	position:relative;
+	width:750px;
+	height:21px;
+	background-color:#FFFFFF;
+	left:0px;
+	top:1px;
+	visibility: visible;
+}
+
+/* Home Menu Layout   */
+#homeMenuA {
+	position:absolute;
+	left:0px;
+	top: 0px;
+	visibility: visible;
+}
+  
+#homeMenuB {
+	position:absolute;
+	left:0px;
+	top:0px;
+	visibility: hidden;
+}
+
+/* Information Menu Layout   */
+
+#infoMenuA {
+	position:absolute;
+	left:150px;
+	top:0px;
+	visibility: visible;
+}
+  
+#infoMenuB {
+	position:absolute;
+	left:150px;
+	top:0px;
+	visibility: hidden;
+}
+
+/* Courses Menu Layout   */
+
+#resourcesMenuA {
+	position:absolute;
+	left:300px;
+	top:0px;
+	visibility: visible;
+}
+  
+#resourcesMenuB {
+	position:absolute;
+	left:300px;
+	top:0px;
+	visibility: hidden;
+}
+
+/* Contact Menu Layout   */
+
+#contactMenuA {
+	position:absolute;
+	left:450px;
+	top:0px;
+	visibility: visible;
+}
+  
+#contactMenuB {
+	position:absolute;
+	left:450px;
+	top:0px;
+	visibility: hidden;
+}
+
+/* Contact Menu Layout   */
+
+#blankMenuA {
+	position:absolute;
+	left:602px;
+	top:0px;
+	visibility: visible;
+}
+  
+#blankMenuB {
+	position:absolute;
+	left:602px;
+	top:0px;
+	visibility: hidden;
+}

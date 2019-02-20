@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--last modified on Thursday, February 16, 2006 08:46 PM -->
+<HTML>
+
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<META NAME="GENERATOR" Content="Visual Page 2.0 for Windows">
+	<META NAME="Author" Content="anderson">
+	<TITLE>Assignment 6: Math 269B Winter 2007</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>Math 269B: Assignment 6</H1>
+<P><I>Assigned Wednesday, Feb. 14, 2007, due Wednesday Feb. 21, 2007</I>
+<H2>
+<HR ALIGN="CENTER">
+Theory Work</H2>
+<P><B>[1]</B> Consider the finite difference method</P>
+<P ALIGN="CENTER"><img src="BackwardEuler.gif" width="197" height="38" align="BOTTOM" border="0"></P>
+<P>used to create an approximate solution to the equation <I>v</I><SUB>t</SUB> = b <I>v</I><SUB>xx</SUB> <B>,</B>
+b &gt; 0, for x <FONT FACE="Symbol">e [0</FONT>, <FONT FACE="Symbol">1</FONT>], t <FONT FACE="Symbol">e [0</FONT>,
+<FONT FACE="Symbol">T</FONT>], and v periodic.<BR>
+<B>(a)</B> Derive the leading term of the local trucation error for this method. <BR>
+<B>(b)</B> Show that the method is unconditionally stable.<BR>
+<B>(c)</B> What is the order of accuracy in the computed solution?</P>
+
+<P><B>[2] </B>Consider the finite difference method</P>
+<P ALIGN="CENTER"><IMG SRC="CN.gif" WIDTH="310" HEIGHT="48" ALIGN="BOTTOM" BORDER="0"></P>
+<P>used to create an approximate solution to the equation <I>v</I><SUB>t</SUB> = b <I>v</I><SUB>xx</SUB> <B>,</B>
+b &gt; 0, for x <FONT FACE="Symbol">e [0,1</FONT>], t <FONT FACE="Symbol">e [0</FONT>, <FONT FACE="Symbol">T</FONT>],
+and v periodic.<BR>
+<B>(a)</B> Derive the leading term of the local trucation error for this method. (If you think a bit, you can save
+yourself some writing).<BR>
+<B>(b)</B> Show that the method is unconditionally stable.<BR>
+<B>(c)</B> What is the order of accuracy in the computed solution?<BR>
+<BR>
+<B>[3]</B> Both of the methods in <B>[1]</B> and <B>[2]</B> are implicit, thus to advance the solution one must
+solve a linear system of equations. Give, in matrix form, the linear equations that must be solved in order to
+advance the solution when using these methods.<br>
+<BR>
+  <B>[4]</B> Do the linear equations that must be solved to implement <B>[1]</B> and <B>[2]</B> always have a solution? 
+
+<H2><FONT SIZE="5">Computational Problems</FONT></H2>
+<P><B>[0] </B>Create a program that computes the solution to <I>v</I><SUB>t</SUB> = <I>v</I><SUB>xx</SUB> <B>,</B>
+for x <FONT FACE="Symbol">e [0</FONT>, <FONT FACE="Symbol">1</FONT>], t <FONT FACE="Symbol">e [0</FONT>, <FONT
+FACE="Symbol">T</FONT>], and v periodic,  using the explicit numerical method</P>
+<P ALIGN="CENTER"><IMG SRC="Simple.gif" WIDTH="171" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"></P>
+<P>Note: I'd suggest copying and then modifying the progam that implemented Lax-Wendroff for the transport equation.
+<BR>
+<BR>
+<B>[1] </B>Use this program to create an approximate solution when <I>v</I>(0,x) = sin(2<FONT FACE="Symbol">p</FONT>x).
+Record and turn in the value of the 2-norm of the error at T= 1.0 when h = 1/20, h = 1/40, and h = 1/80.
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--last modified on Friday, March 03, 2006 09:26 AM -->
+<HTML>
+
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<META NAME="Author" Content="anderson">
+	<TITLE>Assignment 8: Math 269B Winter 2007</TITLE>
+</HEAD>
+
+<BODY>
+<SCRIPT> jsMath = {Controls: {cookie: {scale: 100}}} </SCRIPT>
+<SCRIPT SRC="../../jsMath/jsMath.js"></SCRIPT>
+<SCRIPT> jsMath.Setup.Script("plugins/tex2math.js") </SCRIPT>
+<NOSCRIPT>
+<DIV STYLE="color:#CC0000; text-align:center">
+<B>Warning: <A HREF="http://www.math.union.edu/locate/jsMath">jsMath</A>
+requires JavaScript to process the mathematics on this page.<BR>
+If your browser supports JavaScript, be sure it is enabled.</B>   
+</DIV>
+</NOSCRIPT>
+<SCRIPT> jsMath.Macro('\dfrac','{{\\displaystyle {#1 \\over #2}}}',2) </SCRIPT>
+<H1>Math 269B: Assignment 8</H1>
+<P><I>Assigned Wednesday, Feb. 28, 2007, due Wednesday March. 7, 2007</I>
+<H2>
+<HR ALIGN="CENTER">
+Theory Work</H2>
+<P><B>[1]</B> Consider the finite difference method</P>
+<div class="math">v_{m}^{n+1}=v_{m}^{n}-k {\rm a} \;\dfrac{v_{m+1}^{n+1}-v_{m-1}^{n+1}}{2h} </div>
+<P>used to create an approximate solution to the equation $v_t + {\rm a} v_x = 0$<em>, </em>$a &gt; 0$, for $x\;\in \; [0, 1], t \; \in \;[0,
+T]$ , and $v$ periodic.<BR>
+<BR>
+<B>(a)</B> Is there a CFL restriction associated with this scheme? <BR>
+<BR>
+<B>(b)</B> Under what condition (if any) is this scheme stable in the 2-norm?<BR>
+<BR>
+<B>(c) </B>If this scheme is written in matrix form as ${\rm A}v^{n+1}=v^n$, then one can consider
+using the Sherman-Morrison-Woodbury formula to obtain $v^{n+1}$ <SUP> </SUP>from $v^{n}$. If $\rm {A}= {\rm (A}^\prime + {\rm UV}^t \rm{)}$ then this formula is 
+<div class="math">\rm{A}^{-1} = (\rm{A}^{\prime})^{-1} -  (\rm{A}^{\prime})^{-1} \rm{U} [\; \rm{I} + \rm{V}^t   (\rm{A}^{\prime})^{-1} \rm{U}\;]^{-1} \rm{V}^t   (\rm{A}^{\prime})^{-1}</div>
+<P>
+<P>(i) How should one choose the matrices $\rm{U}$ and $\rm{V}$ so that $\rm{A}^{\prime}$ is tridiagonal?<BR>
+	<BR>
+	(ii) Under what conditions on k and h (if any) will insure that tri-diagonal solution technique used for homework
+#7 will be successful when applied to <span class="math">\rm{A}^{\prime}</span>?
+
+<P><B>[2]</B> Consider the semi-implicit finite difference method</P>
+<div class="math">v^{n+1}=v^{n}-k\;a {\rm D}_{0} v^{n} + k { \rm b}\; {\rm D}_{+} {\rm D}_{-} v^{n+1}</div>
+<P>used to create an approximate solution to the equation $v_t + {\rm a} \; v_x = {\rm b} \;v_{xx} $<B>,</B> a and b &gt; 0, for  $x\;\in \; [0, 1], t \; \in \;[0,
+T]$ and $v$ periodic.<BR>
+<BR>
+<B>(a)</B> What is the amplification factor for this scheme?<BR>
+<BR>
+<B>(b)</B> Under what condition (if any) is this scheme stable?<BR>
+<br>
+<BR>
+<B>[3] </B>(i) Derive the finite difference approximation to $({\rm b}(x) v_x )_x$ using the
+&quot;finite volume&quot; technique. <br>
+<BR>
+(ii) If $x\;\in \; [0, 1]$ and homogeneous Dirichlet boundary conditions
+are assumed for $v$ <I>, </I>give the matrix representation of this finite difference approximation.<BR>
+<br>
+<br>
+<BR>
+<BR>
+<B>[4] (a) </B>Assume $(x,\;y)\;\in \; [0, 1] \times [0,1]\;$ and consider
+the differential operator ${ \rm L}v = ( v_{xx} + v_{yy} ) $  with homogenous Dirichlet boundary
+conditions on $v$ <I>. </I>Show that the functions
+<div class="math">s_{(p,q)} (x,y) = \sin(\rm{p} \pi x) \sin (\rm{q} \pi y)</div>
+<P>for p = 1,2, 3, ... and q = 1, 2, 3 ... are eigenfunctions of L and give their corresponding eigenvalues.<BR>
+<BR>
+<B>(b)</B> Give the solution to the equation $v_t = {\rm b} ( v_{xx} + v_{yy})$<B>,</B>
+b &gt; 0, for $(x,\;y)\;\in \; [0, 1] \times [0,1]\;$  with initial condition $v(x,y,0) =\sin(\rm{p} \pi x) \sin (\rm{q} \pi y)$ for p and q positive integers and homogeneous Dirichlet boundary conditions for $v$.
+
+<H2><FONT SIZE="5">Computational Problems</FONT></H2>
+<P><B>[1] (a)</B> Create a program that uses the explicit scheme</P>
+<div class="math">v^{n+1}=v^{n} + k  {\rm b}\; ({\rm D}_{+}^x{\rm D}_{-}^x + {\rm D}_{+}^y{\rm D}_{-}^y ) v^{n}</div>
+<P>to compute approximation solutions to the equation $v_t = \dfrac{1}{50} ( v_{xx} + v_{yy} ) $ for $(x,\;y)\;\in \; [0, 1] \times [0,1]$ , with initial condition $v(x,y,0) = \sin( \pi x) \sin (2 \pi y)$ and homogeneous Dirichlet boundary conditions for $v$. <BR>
+<BR>
+<B>(b)</B> Compute, record, and then turn in the discrete ${\rm L}^2$  norm error in the solution at t = 0.5 for calculations
+done with 20 and 40 panels in each direction. Use a discrete ${\rm L}^2$ norm that consists of the Trapezoidal rule for
+functions defined on $[0, 1] \times [0,1]$<BR>
+<BR>
+<B>(c)</B> Turn in a plot of your solution at t = 0.5 that uses 40 panels in each direction. <BR>
+<BR>
+<B>Possibly Useful Files </B><BR>
+<BR>
+<TABLE BORDER="0" WIDTH="81%">
+	<TR>
+		<TD WIDTH="16%"><A HREF="../CPPcodes/DoubleArray2D.h">DoubleArray2D.h
+		</A>		
+	    <br>
+	    <a href="../CPPcodes/DoubleArray1D.h">DoubleArray1D.h</a></TD>
+		<TD WIDTH="7%">&nbsp;</TD>
+		<TD WIDTH="77%">2D array class<br>
+		  1D array class </TD>
+	</TR>
+	<TR>
+		<TD WIDTH="16%"><A HREF="../CPPcodes/LaplaceOp2D.h">LaplaceOp2D.h</A></TD>
+		<TD WIDTH="7%">&nbsp;</TD>
+		<TD WIDTH="77%">A class whose apply(...) member function applies the 2D Laplace operator with Dirichlet boundary conditions.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="16%"><p><A HREF="../CPPcodes/outputToGNUplot.h">outputToGNUplot.h</A>, <A HREF="../CPPcodes/outputToGNUplot.cpp">outputToGNUplot.cpp</A></p>	    </TD>
+		<TD WIDTH="7%">&nbsp;</TD>
+		<TD WIDTH="77%">Utility routine for creating 2D data files that can be read and plotted using GNUplot's splot command. If you want
+			to get GNUplot for windows, there is a link on the <A HREF="../Support/AboutGnuplot.html">GNUplot resources
+			page</A>.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="16%"><A HREF="../CPPcodes/outputToMatlab.h">outputToMatlab.h</A>, <A HREF="../CPPcodes/outputToMatlab.cpp">outputToMatlab.cpp</A></TD>
+		<TD WIDTH="7%">&nbsp;</TD>
+		<TD WIDTH="77%">Utility routine for creating 2D data files that can be read and plotted using Matlab.</TD>
+	</TR>
+	<TR>
+	  <TD><a href="../CPPcodes/GNUplotArray2Dtest.cpp">GNUplotArray2Dtest.cpp</a></TD>
+	  <TD>&nbsp;</TD>
+	  <TD>Test code for using GNUplot to create a surface plot of a data in a DoubleArray2D.</TD>
+  </TR>
+	<TR>
+	  <TD><A HREF="../CPPcodes/LaplaceOp2Dtest.cpp">LaplaceOp2Dtest.cpp</A></TD>
+	  <TD>&nbsp;</TD>
+	  <TD>Test code that demonstrates the use of DoubleArray2D, LaplaceOp2D, and the output utilities.</TD>
+  </TR>
+	<TR>
+		<TD WIDTH="16%"><A HREF="../CPPcodes/LaplaceOp2Dtest_cg.cpp">LaplaceOp2Dtest_cg.cpp</A></TD>
+		<TD WIDTH="7%">&nbsp;</TD>
+		<TD WIDTH="77%">Test code using CAMgraphics that demonstrates the use of DoubleArray2D, LaplaceOp2D, and the output utilities.</TD>
+	</TR>
+</TABLE>
+
+
+</BODY>
+ <SCRIPT> jsMath.ConvertTeX() </SCRIPT>
+ <SCRIPT> jsMath.Process() </SCRIPT>
+</HTML>

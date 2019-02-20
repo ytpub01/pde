@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--last modified on Friday, February 24, 2006 08:33 AM -->
+<HTML>
+
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<META NAME="GENERATOR" Content="Visual Page 2.0 for Windows">
+	<META NAME="Author" Content="anderson">
+	<SCRIPT> jsMath = {Controls: {cookie: {scale: 100}}} </SCRIPT>
+   <SCRIPT SRC="../../jsMath/jsMath.js"></SCRIPT>
+   <SCRIPT> jsMath.Setup.Script("plugins/tex2math.js") </SCRIPT><NOSCRIPT>
+<DIV STYLE="color:#CC0000; text-align:center">
+      <B>Warning: <A HREF="http://www.math.union.edu/locate/jsMath">jsMath</A>
+      requires JavaScript to process the mathematics on this page.<BR>
+      If your browser supports JavaScript, be sure it is enabled.</B>    </DIV>
+ <HR>
+</NOSCRIPT>
+	<TITLE>Assignment 7: Math 269B Winter 2007</TITLE>
+</HEAD>
+
+<BODY>
+
+<SCRIPT> jsMath.Macro('\dfrac','{{\\displaystyle {#1 \\over #2}}}',2) </SCRIPT>
+<H1>Math 269B: Assignment 7</H1>
+<P><I>Assigned Wednesday, Feb. 21, 2007, due Wednesday Feb. 28, 2007</I>
+  <br>
+(Version: February 27, 2007 7:41 PM)
+<H2>
+<HR ALIGN="CENTER">
+Theory Work</H2>
+<P><B>[1]</B> Consider the finite difference method</P>
+<DIV CLASS="math"> v_{m}^{n+1}=v_{m}^{n}-k\;{\rm b}_{m}\left( \dfrac{v_{m+1}^{n}-2v_{m}^{n}+v_{m-1}^{n}
+}{h^{2}}\right) </DIV>
+<P>used to create an approximate solution to the equation $v_{t} = {\rm b}(x) v_{xx}$,$\;{\rm b}(x) > 0$, for x <FONT FACE="Symbol">e [0</FONT>, <FONT FACE="Symbol">1</FONT>], t <FONT FACE="Symbol">e [0</FONT>,
+<FONT FACE="Symbol">T</FONT>], and v periodic.<BR>
+<BR>
+<B>(a)</B> Find the value <FONT FACE="Symbol">m</FONT> for which this method is stable in the infinity norm , ||
+||<SUB><FONT FACE="Symbol">&yen;</FONT></SUB>, under the condition k/h<SUP>2</SUP> = <FONT FACE="Symbol">m. </FONT>Here ${\rm b}_{m} = {\rm b}(x_{m})$. <BR>
+<BR>
+<B>(b)</B> If the stability condition for this method is satisfied, then is this a convergent method? If the method
+is convergent, what is the order of accuracy of the computed solution?
+<P><B>[2] </B>Consider the equation $v_{t} ={\rm b}\; v_{xx}$ <B>,</B> b &gt; 0, for x <FONT
+FACE="Symbol">e [0,1</FONT>], t <FONT FACE="Symbol">e [0</FONT>, <FONT FACE="Symbol">T</FONT>], with initial condition $v(x,0)=v_{0}(x)$ and boundary conditions $v(0,t)=1$ and $v(1,t)=2$<em>.</em><BR>
+<BR>
+<B>(a)</B> Give, in matrix/vector form, the explicit finite difference method that arises when one uses ${\rm D}_{+}{\rm D}_{-}$ to approximate $v_{xx}$ and forward Euler is used for the timestepping. <BR>
+<BR>
+<B>(b)</B> What is the stability estimate required to prove that the scheme converges in the 2-norm, || ||<SUB><FONT
+FACE="Symbol">2</FONT></SUB>?<BR>
+<BR>
+<B>(c)</B> Does the stability condition on this scheme depend on the specified boundary values?<BR>
+<BR>
+<BR>
+<B>[3] </B>Consider the equation $v_{t} ={\rm b}\; v_{xx}$ <B>,</B> b &gt; 0, for x <FONT
+FACE="Symbol">e [0,1</FONT>], t <FONT FACE="Symbol">e [0</FONT>, <FONT FACE="Symbol">T</FONT>], with initial condition $v(x,0)=v_{0}(x)$<em> </em>and boundary conditions $v(0,t)=1$  and $v_{x}(1,t)=2$. <BR>
+<BR>
+<B>(a)</B> If the interval <FONT FACE="Symbol">[0,1</FONT>] is decomposed into M panels, what is the dimension
+of the vector used to store the unknown values of the solution at a given time level? <BR>
+<BR>
+<B>(b)</B> Give, in matrix/vector form, the explicit finite difference method that arises when one uses ${\rm D}_{+}{\rm D}_{-}$ to approximate $v_{xx}$, a second order centered difference scheme is used to approximate $v_{x}$, and backward Euler is used for the timestepping. <BR>
+<BR>
+<B>(c)</B> What diagonal scaling matrix could you multiply your difference method by so that the matrix in the
+resulting iteration is symmetric?
+<br>
+<br>
+<br>
+<H2><FONT SIZE="5">Computational Problems</FONT></H2>
+<P><B>[1] </B>Consider the following identity for an n x n tri-diagonal matrix</P>
+<P><div class = "math">\rm \left( <br>
+  \begin{array}{ccccc}<br>
+  a_{0} &amp; c_{0} &amp;  &amp;  &amp;  \\ <br>
+  b_{1} &amp; a_{1} &amp; c_{1} &amp;  &amp;  \\ <br>
+  &amp; \ast &amp; \ast &amp; \ast &amp;  \\ <br>
+  &amp;  &amp; \ast &amp; \ast &amp; c_{n-2} \\ <br>
+  &amp;  &amp;  &amp; b_{n-1} &amp; a_{n-1}<br>
+  \end{array}<br>
+  \right) =\left( <br>
+  \begin{array}{ccccc}<br>
+  1 &amp;  &amp;  &amp;  &amp;  \\ <br>
+  d_{1} &amp; 1 &amp;  &amp;  &amp;  \\ <br>
+  &amp; \ast &amp; \ast &amp;  &amp;  \\ <br>
+  &amp;  &amp; \ast &amp; \ast &amp;  \\ <br>
+  &amp;  &amp;  &amp; d_{n-1} &amp; 1<br>
+  \end{array}<br>
+  \right) \left( <br>
+  \begin{array}{ccccc}<br>
+  e_{0} &amp; c_{0} &amp;  &amp;  &amp;  \\ <br>
+  &amp; e_{1} &amp; c_{1} &amp;  &amp;  \\ <br>
+  &amp;  &amp; \ast &amp; \ast &amp;  \\ <br>
+  &amp;  &amp;  &amp; \ast &amp; c_{n-2} \\ <br>
+  &amp;  &amp;  &amp;  &amp; e_{n-1}<br>
+  \end{array}<br>
+  \right) </div><br>
+  <P><BR>
+By equating the matrix elements in the above identity one finds that d<SUB>i</SUB> and e<SUB>i</SUB> are given
+by</P>
+  <P><div class="math">
+    <p>\begin{eqnarray}e_0 &amp=&amp a_0 \\ <br>
+    d_{i} &amp=&amp \dfrac{b_{i}}{e_{i-1}}\\<br>
+    e_{i} &amp=&amp a_{i} -{d_{i}}*{c_{i-1}} \qquad i = 1,2,\ldots, n-1<br>
+    \end{eqnarray}</p>
+    </div> 
+  <p>Let A be the matrix on the left hand side of the above identity. Given the coefficients $d_i$ and $e_i$, 
+    the solution of the system of equations A<B>x</B> = <B>z </B>can be found by forward  </p>
+  <div class="math">
+    <p>\begin{eqnarray}y_0 &amp=&amp z_0 \\ 
+    <br>
+      y_{i} &amp=&amp z_{i} -{d_{i}}*{y_{i-1}} \qquad i = 1,2,\ldots, n-1<br>
+    \end{eqnarray}<br>
+    <br>
+  </p>
+  </div>
+<p>and then back substitution
+<div class = "math">\begin{eqnarray}<br>
+x_{n-1} &amp=&amp \dfrac{y_{n-1}}{e_{n-1}}\\<br>
+x_{i} &amp=&amp \dfrac{(y_{i}-c_{i}*x_{i+1})}{e_{i}}
+\qquad i = n-2,\ldots,1,0 <br>
+\end{eqnarray}</div>
+<p><br>
+Create a routine that uses this procedure to solve systems of tri-diagonal equations. Your routine should accept
+as input the coefficients of the tri-diagonal matrix in three vectors (one for the a's, one for the b's, and one
+for the c's) and the vector corresponding to the right hand side of the equation. The routine should return the
+vector <B>x</B> that is the solution to P<B>x</B> = <B>z</B>.<B> Turn in a listing of your routine. </B><BR>
+<BR>
+  <B>[2] (a)</B> Create a program that uses Crank-Nicolson to solve</p>
+
+  <BLOCKQUOTE>
+	<P>$v_t=\dfrac{1}{10}\; v_{xx}$<BR>
+      <BR>
+	  $v(x, 0) = sin(\pi x) - sin(3 \pi x)$<BR>
+      <BR>
+	  $v(0, t) = v(1, t) = 0 $
+</BLOCKQUOTE>
+
+<P>for t in [0, 0.5] and $v_{xx}$ is approximated by ${\rm D}_{+}{\rm D}_{-}$. Use the routine that you created in
+<B>[1] </B>to solve the implicit equations.<BR>
+<BR>
+<B>(b)</B> Compute solutions with the number of panels M = 20, 40, and 80 using a timestep dt = dx. Compute, record,
+and then turn in the maximal error in the solution at t = 0.5 for each of these calculations. What order of accuracy
+is indicated by your results?
+ <SCRIPT> jsMath.ConvertTeX() </SCRIPT>
+ <SCRIPT> jsMath.Process() </SCRIPT>
+</BODY>
+
+</HTML>

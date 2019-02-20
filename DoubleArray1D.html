@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+	
+	
+	<META NAME="VPSiteProject" CONTENT="file:///H|/CRA/public_html/ExportProject.vpp"><META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<META NAME="GENERATOR" Content="Visual Page 2.0 for Windows">
+	<TITLEDoubleVector Class Reference</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>DoubleArray1D Class Reference</H1>
+<P><I>Include file</I> : <A HREF="DoubleArray1D.h" target="_parent">DoubleArray1D.h</A><BR>
+<A HREF="DoubleArray1DSamples.html" target="_parent">DoubleArray1D Samples </A></A>
+<HR ALIGN="CENTER">
+Class DoubleArray1D Provides a "light weight" one dimensional array structure      with initialization capabilities, array operations, and      optional bounds checking.<BR>
+<BR>
+The  default beginning index value is 0 : (C convention)<BR>
+<BR>
+The copy constructor creates a duplicate instance. Deleting the copy will not delete the data of the original.<BR>
+<H3>Class Reference</H3>
+
+<UL>
+	<LI><A HREF="#Constructors">Constructors</A>
+	<LI><A HREF="#Initialize">Initialization</A>
+	<LI><A HREF="#Access">Access</A>
+	<LI><A HREF="#Vector">Vector Operations</A>
+</UL>
+
+<P>Created for Math 270E, 270C and 269B.<br>
+Author: Chris Anderson, UCLA, 2000.</P>
+<HR ALIGN="CENTER">
+<A NAME="Constructors"></A><B><U>Constructors</U></B></P>
+<P>
+<TABLE BORDER="0" CELLPADDING="7" CELLSPACING="0" WIDTH="600">
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>DoubleArray1D()</B></CODE></TD>
+		<TD WIDTH="40%" VALIGN="TOP">Creates a null class instance.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%"><CODE><B>DoubleArray1D(long m)</B></CODE></TD>
+		<TD WIDTH="40%">Creates a vector of length m.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>DoubleArray1D(double* d, long m)</B></CODE></TD>
+		<TD WIDTH="40%">Creates a vector of length m that &quot;wraps&quot; the data specifed by d. d is a pointer to a double array of
+			size m. Operations on the vector will result in operations on the data d.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%"><CODE><B>DoubleArray1D(const DoubleArray1D&amp; V)</B></CODE></TD>
+		<TD WIDTH="40%">Creates a duplicate of the vector V.</TD>
+	</TR>
+</TABLE>
+<A NAME="Initialize"></A><B><U>Initialization</U></B></P>
+<P>
+<TABLE BORDER="0" CELLPADDING="7" CELLSPACING="0" WIDTH="590">
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>initialize(long m)</B>	</CODE> </TD>
+		<TD WIDTH="40%" VALIGN="TOP">Initializes an instance to a vector of size m.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>initialize(double* d, long m)</B>	</CODE> </TD>
+		<TD WIDTH="40%">Initializes an instance to a vector of length m that &quot;wraps&quot; the data specified by d. d is a pointer
+			to a double array of size m. Operations on the vector will result in operations on the data d. argument.</TD>
+	</TR>
+</TABLE>
+</P>
+<br>
+<br>
+<br>
+<P><A NAME="Access"></A><B><U>Access/Sizing</U></B></P>
+<P>
+<TABLE BORDER="0" CELLPADDING="7" CELLSPACING="0" WIDTH="590">
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>double operator()(long i)</B>	</CODE> </TD>
+		<TD WIDTH="40%" VALIGN="TOP">Returns the element at location i. This operator may be invoked on either side of an assignment statement. The
+			default indexing starts at 0.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>long getSize()</B>	</CODE> </TD>
+		<TD WIDTH="40%">Returns the size of the vector.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%"><CODE><B>long getIndexBegin()</B>	</CODE> </TD>
+		<TD WIDTH="40%">Returns the beginning index value.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%"><CODE><B>long getIndexEnd()</B>	</CODE> </TD>
+		<TD WIDTH="40%">Returns the ending index value.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%"><CODE><B>setIndexBegin(long k)</B>	</CODE> </TD>
+		<TD WIDTH="40%">Sets the beginning access index to k.</TD>
+	</TR>
+	<TR>
+	  <TD><pre><B>void resize(long newSize</B>)</pre></TD>
+	  <TD>Resizes the vector to exactly newSize</TD>
+  </TR>
+	<TR>
+		<TD WIDTH="60%">ostream&amp; operator &lt;&lt; (DoubleArray1D&amp; V)</Ppre>		</TD>
+		<TD WIDTH="40%">Stream output. </TD>
+	</TR>
+</TABLE>
+<B><U><BR>
+</U></B><A NAME="Vector"></A><B><U>Vector Operations</U></B></P>
+
+<P>
+<TABLE BORDER="0" CELLPADDING="7" CELLSPACING="0" WIDTH="590">
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>DoubleArray1D operator=(DoubleArray1D&amp; V)</B>	</CODE> </TD>
+		<TD WIDTH="40%" VALIGN="TOP">Vector assignment.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>DoubleArray1D operator+(DoubleArray1D&amp; V)</B>	</CODE> </TD>
+		<TD WIDTH="40%">Vector addition.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>DoubleArray1D operator-(DoubleArray1D&amp; V)</B>	</CODE> </TD>
+		<TD WIDTH="40%">Vector subtraction.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>DoubleArray1D operator*(double alpha)</B>	</CODE> </TD>
+		<TD WIDTH="40%">Scalar multiplication.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>DoubleArray1D operator/(double alpha)</B>	</CODE> </TD>
+		<TD WIDTH="40%">Scalar division.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>DoubleArray1D operator*=(double alpha)</B>	</CODE> </TD>
+		<TD WIDTH="40%">Incremental scalar multiplication. V*= alpha results in V = alpha*V</TD>
+	</TR>
+	<TR>
+	  <TD VALIGN="TOP"><CODE><B>DoubleArray1D operator+=(DoubleArray1D&amp; V)</B></CODE></TD>
+	  <TD>Incremental vector addition. V+=W results in V = V + W.</TD>
+  </TR>
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>DoubleArray1D operator-=(DoubleArray1D&amp; V)</B>	</CODE> </TD>
+		<TD WIDTH="40%">Incremental vector subtraction. V-=W results in V = V - W.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%" VALIGN="TOP"><CODE><B>double dot(DoubleArray1D&amp; V)</B></CODE> </TD>
+		<TD WIDTH="40%">Returns the dot product of the vector with V.</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="60%">
+			<PRE><B>void setToValue(double d)</B></PRE>		</TD>
+		<TD WIDTH="40%">Sets every element of the vector to the value d.</TD>
+	</TR>
+</TABLE>
+
+
+</BODY>
+
+</HTML>
